@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Text"; ObjectID = "GLi-NG-ua3"; */
+"GLi-NG-ua3.text" = "Text";
+
+/* Class = "UISegmentedControl"; Isx-11-FLR.segmentTitles[0] = "Dutch"; ObjectID = "Isx-11-FLR"; */
+"Isx-11-FLR.segmentTitles[0]" = "Dutch";
+
+/* Class = "UISegmentedControl"; Isx-11-FLR.segmentTitles[1] = "Spanish"; ObjectID = "Isx-11-FLR"; */
+"Isx-11-FLR.segmentTitles[1]" = "Spanish";

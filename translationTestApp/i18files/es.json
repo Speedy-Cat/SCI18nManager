@@ -1,0 +1,8 @@
+{
+    "language":"Spanish",
+    "acronym":"es",
+    "content":{
+        "hello":"Hola",
+        "how are you?":"Cómo estás?"
+    }
+}
