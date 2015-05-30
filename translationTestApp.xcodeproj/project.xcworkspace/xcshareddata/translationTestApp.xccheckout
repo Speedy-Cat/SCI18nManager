@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>001C690D-56D4-4E1D-9BE2-4DE94E9E7608</string>
+	<key>IDESourceControlProjectName</key>
+	<string>translationTestApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>258931E111A80CE3DEA1980E98B2FE64AAC96E02</key>
+		<string>https://bitbucket.org/adrianortuzar/pnmi18.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>translationTestApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>258931E111A80CE3DEA1980E98B2FE64AAC96E02</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/adrianortuzar/pnmi18.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>258931E111A80CE3DEA1980E98B2FE64AAC96E02</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>258931E111A80CE3DEA1980E98B2FE64AAC96E02</string>
+			<key>IDESourceControlWCCName</key>
+			<string>pnmi18</string>
+		</dict>
+	</array>
+</dict>
+</plist>

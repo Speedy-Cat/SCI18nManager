@@ -8,17 +8,33 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ PNMI18Manager is a shared object that manage the internationalization of the app.
+ Once you set the languages contents, it takes care about:
+ 
+ - knowing the current set up language of the app
+ 
+ - knowing the order of the language
+ 
+ - translate string previouly set up
+ 
+ */
 @interface PNMI18Manager : NSObject
 
-typedef enum {
-    kDutch,
-    kSpanish
-} PNMLanguage;
+/**
+ Explanation of this method
+ */
++ (id)sharedInstance;
 
-@property (nonatomic) PNMLanguage currentLanguage;
+/**
+ 
+ */
+- (NSString *)getI18ofString:(NSString*)string forLanguage:(NSString*)language;
+- (void)setContent:(NSDictionary *)content forLanguageName:(NSString *)language;
+- (int)getOrderForLanguage:(NSString*)language;
+- (NSString*)getLanguageForOrder:(int)order;
 
-+ (id)sharedManager;
-
-- (NSString *)getI18ofString:(NSString*)string forLanguage:(PNMLanguage)language;
+@property (nonatomic, strong) NSMutableDictionary *languagesContent;
+@property (nonatomic) NSString *currentLanguage;
 
 @end

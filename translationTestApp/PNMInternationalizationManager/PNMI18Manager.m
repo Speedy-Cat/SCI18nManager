@@ -10,76 +10,75 @@
 
 @interface PNMI18Manager ()
 
-@property (nonatomic, strong) NSMutableDictionary *languagesContent;
-
 @end
 
 @implementation PNMI18Manager
 
-+ (id)sharedManager
++ (id)sharedInstance
 {
-    static PNMI18Manager *sharedMyManager = nil;
+    static PNMI18Manager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedMyManager = [[self alloc] init];
+        sharedInstance = [[self alloc] init];
     });
-    return sharedMyManager;
+    return sharedInstance;
 }
 
 - (id)init
 {
     if (self = [super init]) {
-        
-        // read json files
-        NSString *esJsonString = [[NSBundle mainBundle] pathForResource:@"es" ofType:@"json"];
-        NSString *duJsonString = [[NSBundle mainBundle] pathForResource:@"du" ofType:@"json"];
-        NSArray *jsonStrings = @[duJsonString, esJsonString];
-        
         self.languagesContent = [[NSMutableDictionary alloc] init];
-        
-        for (NSString *jsonString in jsonStrings) {
-            
-            NSString *myJSON = [[NSString alloc] initWithContentsOfFile:jsonString encoding:NSUTF8StringEncoding error:NULL];
-            NSData *objectData = [myJSON dataUsingEncoding:NSUTF8StringEncoding];
-            NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:objectData
-                                                                 options:NSJSONReadingMutableContainers
-                                                                   error:nil];
-            
-            [self.languagesContent setObject:[jsonDic objectForKey:@"content"] forKey:[jsonDic objectForKey:@"acronym"]];
-        }
-        
     }
     return self;
 }
 
-
-- (PNMLanguage)currentLanguage
+- (NSString *)getI18ofString:(NSString*)string forLanguage:(NSString*)language
 {
-    
-    if(_currentLanguage){
-        _currentLanguage = kDutch;
-    }
-    
-    return _currentLanguage;
+    NSDictionary *i18 = [self.languagesContent objectForKey:language];
+    NSDictionary *content = [i18 objectForKey:@"content"];
+    return [content objectForKey:string];
 }
 
-- (NSString *)getI18ofString:(NSString*)string forLanguage:(PNMLanguage)language
+- (void)setContent:(NSDictionary *)content forLanguageName:(NSString *)language
 {
-    
-    NSDictionary *i18;
-    
-    switch (language) {
-        case kDutch:
-            i18 = [self.languagesContent objectForKey:@"du"];
-            break;
-        case kSpanish:
-            i18 = [self.languagesContent objectForKey:@"es"];
-            break;
-        default:
-            break;
+    [self.languagesContent setObject:content forKey:language];
+}
+
+- (NSString *)currentLanguage 
+{
+    if (!self.currentLanguage) {
+        NSArray *values = [self.languagesContent allKeys]; // Warning: this order may change.;
+        if ([values count]) {
+            self.currentLanguage = values[0];
+        }
     }
     
-    return [i18 objectForKey:string];
+    return self.currentLanguage;
+}
+
+- (int)getOrderForLanguage:(NSString*)language
+{
+    NSDictionary *langsContent = self.languagesContent;
+    NSDictionary *content = [langsContent objectForKey:language];
+    int order = (int)[[content objectForKey:@"order"] integerValue];
+    
+    return order;
+}
+
+- (NSString*)getLanguageForOrder:(int)order
+{
+    NSString *language;
+
+    for (NSString *languageKey in self.languagesContent) {
+        NSDictionary *content = [self.languagesContent objectForKey:languageKey];
+        int contentOrder = (int)[[content objectForKey:@"order"] integerValue];
+        if (order == contentOrder) {
+            language = languageKey;
+            break;
+        }
+    }
+    
+    return language;
 }
 
 @end
