@@ -46,14 +46,14 @@
 
 - (NSString *)currentLanguage 
 {
-    if (!self.currentLanguage) {
-        NSArray *values = [self.languagesContent allKeys]; // Warning: this order may change.;
+    if (!_currentLanguage) {
+        NSArray *values = [_languagesContent allKeys]; // Warning: this order may change.;
         if ([values count]) {
-            self.currentLanguage = values[0];
+            _currentLanguage = values[0];
         }
     }
     
-    return self.currentLanguage;
+    return _currentLanguage;
 }
 
 - (int)getOrderForLanguage:(NSString*)language
