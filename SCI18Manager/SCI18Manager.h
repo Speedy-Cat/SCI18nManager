@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- PNMI18Manager is a shared object that manage the internationalization of the app.
+ SCI18Manager is a shared object that manage the internationalization of the app.
  Once you set the languages contents, it takes care about:
  
  - knowing the current set up language of the app
@@ -22,16 +22,16 @@
 @interface SCI18Manager : NSObject
 
 /**
- 'sharedInstance' is the init method for PNMI18Manager.
+ 'sharedInstance' is the init method for SCI18Manager.
  
- Each time that you want to use PNMI18Manager you have to do it throught this method.
+ Each time that you want to use SCI18Manager you have to do it throught this method.
  
  For example:
  
  @code
- NSString *currentLanguage = [[PNMI18Manager PNMI18Manager] currentLanguage];
+ NSString *currentLanguage = [[SCI18Manager SCI18Manager] currentLanguage];
  
- @return PNMI18Manager singleton instanciated
+ @return SCI18Manager singleton instanciated
  */
 + (id)sharedInstance;
 

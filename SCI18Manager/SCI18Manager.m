@@ -1,5 +1,5 @@
 //
-//  PNMInternationalizationManager.m
+//  SC18Manager.m
 //  translationTestApp
 //
 //  Created by Adrian Ortuzar on 27/05/15.
