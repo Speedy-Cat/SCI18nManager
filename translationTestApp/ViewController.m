@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "PNMI18Manager.h"
+#import "SCI18Manager.h"
 
 @interface ViewController ()
 
@@ -25,7 +25,7 @@
     [self setupI18manager];
     
     // get current language and switch
-    NSString *currentLanguage = [[PNMI18Manager sharedInstance] currentLanguage];
+    NSString *currentLanguage = [[SCI18Manager sharedInstance] currentLanguage];
     [self swichtForLanguage:currentLanguage];
 }
 
@@ -48,7 +48,7 @@
         int order = (int)[[jsonDic objectForKey:@"order"] integerValue];
         
         //setupI18manager
-        [[PNMI18Manager sharedInstance] setContent:jsonDic forLanguageName:language];
+        [[SCI18Manager sharedInstance] setContent:jsonDic forLanguageName:language];
         
         //set segment
         [self.segmentedCtrl setTitle:language forSegmentAtIndex:order];
@@ -58,12 +58,12 @@
 - (void)swichtForLanguage:(NSString*)language{
 
     //segment
-    int order = [[PNMI18Manager sharedInstance] getOrderForLanguage:language];
+    int order = [[SCI18Manager sharedInstance] getOrderForLanguage:language];
     [self.segmentedCtrl setEnabled:YES forSegmentAtIndex:order];
     
     //labels
-    self.helloLabel.text = [[PNMI18Manager sharedInstance] getI18ofString:@"hello" forLanguage:language];
-    self.questionLabel.text = [[PNMI18Manager sharedInstance] getI18ofString:@"how are you?" forLanguage:language];
+    self.helloLabel.text = [[SCI18Manager sharedInstance] getI18ofString:@"hello" forLanguage:language];
+    self.questionLabel.text = [[SCI18Manager sharedInstance] getI18ofString:@"how are you?" forLanguage:language];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,7 +75,7 @@
 
 - (IBAction)segmentCtrlAction:(id)sender {
     
-    NSString *language = [[PNMI18Manager sharedInstance] getLanguageForOrder:(int)self.segmentedCtrl.selectedSegmentIndex];
+    NSString *language = [[SCI18Manager sharedInstance] getLanguageForOrder:(int)self.segmentedCtrl.selectedSegmentIndex];
     [self swichtForLanguage:language];
 }
 

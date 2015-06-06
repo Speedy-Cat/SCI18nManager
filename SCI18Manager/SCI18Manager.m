@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 Adrian Ortuzar. All rights reserved.
 //
 
-#import "PNMI18Manager.h"
+#import "SCI18Manager.h"
 
-@interface PNMI18Manager ()
+@interface SCI18Manager ()
 
 @end
 
-@implementation PNMI18Manager
+@implementation SCI18Manager
 
 + (id)sharedInstance
 {
-    static PNMI18Manager *sharedInstance = nil;
+    static SCI18Manager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];

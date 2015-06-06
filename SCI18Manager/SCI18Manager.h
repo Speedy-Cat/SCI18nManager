@@ -1,5 +1,5 @@
 //
-//  PNMInternationalizationManager.h
+//  SCInternationalizationManager.h
 //  translationTestApp
 //
 //  Created by Adrian Ortuzar on 27/05/15.
@@ -19,7 +19,7 @@
  - translate string previouly set up
  
  */
-@interface PNMI18Manager : NSObject
+@interface SCI18Manager : NSObject
 
 /**
  'sharedInstance' is the init method for PNMI18Manager.

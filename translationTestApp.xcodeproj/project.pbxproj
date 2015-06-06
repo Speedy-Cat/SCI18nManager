@@ -14,9 +14,9 @@
 		49E96C971B15D4690019A490 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E96C961B15D4690019A490 /* Images.xcassets */; };
 		49E96C9A1B15D4690019A490 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49E96C981B15D4690019A490 /* LaunchScreen.xib */; };
 		49E96CA61B15D4690019A490 /* translationTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96CA51B15D4690019A490 /* translationTestAppTests.m */; };
-		49E96CBD1B15EC140019A490 /* PNMI18Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96CBC1B15EC140019A490 /* PNMI18Manager.m */; };
 		49E96CC11B1612F50019A490 /* du.json in Resources */ = {isa = PBXBuildFile; fileRef = 49E96CBF1B1612F50019A490 /* du.json */; };
 		49E96CC21B1612F50019A490 /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 49E96CC01B1612F50019A490 /* es.json */; };
+		D59260CE1B22E642002EB240 /* SCI18Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = D59260CD1B22E642002EB240 /* SCI18Manager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +45,10 @@
 		49E96CA51B15D4690019A490 /* translationTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = translationTestAppTests.m; sourceTree = "<group>"; };
 		49E96CB51B15E6BA0019A490 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Main.strings"; sourceTree = "<group>"; };
 		49E96CB61B15E6BA0019A490 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		49E96CBB1B15EC140019A490 /* PNMI18Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNMI18Manager.h; path = PNMInternationalizationManager/PNMI18Manager.h; sourceTree = "<group>"; };
-		49E96CBC1B15EC140019A490 /* PNMI18Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNMI18Manager.m; path = PNMInternationalizationManager/PNMI18Manager.m; sourceTree = "<group>"; };
 		49E96CBF1B1612F50019A490 /* du.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = du.json; path = i18files/du.json; sourceTree = "<group>"; };
 		49E96CC01B1612F50019A490 /* es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = es.json; path = i18files/es.json; sourceTree = "<group>"; };
+		D59260CC1B22E642002EB240 /* SCI18Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCI18Manager.h; sourceTree = "<group>"; };
+		D59260CD1B22E642002EB240 /* SCI18Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18Manager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +72,7 @@
 		49E96C7D1B15D4680019A490 = {
 			isa = PBXGroup;
 			children = (
+				D59260CB1B22E642002EB240 /* SCI18Manager */,
 				49E96C881B15D4680019A490 /* translationTestApp */,
 				49E96CA21B15D4690019A490 /* translationTestAppTests */,
 				49E96C871B15D4680019A490 /* Products */,
@@ -91,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				49E96CBE1B160FB30019A490 /* i18files */,
-				49E96CBA1B15EB7E0019A490 /* PNMInternationalizationManager */,
 				49E96C8D1B15D4680019A490 /* AppDelegate.h */,
 				49E96C8E1B15D4680019A490 /* AppDelegate.m */,
 				49E96C901B15D4680019A490 /* ViewController.h */,
@@ -130,15 +130,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		49E96CBA1B15EB7E0019A490 /* PNMInternationalizationManager */ = {
-			isa = PBXGroup;
-			children = (
-				49E96CBB1B15EC140019A490 /* PNMI18Manager.h */,
-				49E96CBC1B15EC140019A490 /* PNMI18Manager.m */,
-			);
-			name = PNMInternationalizationManager;
-			sourceTree = "<group>";
-		};
 		49E96CBE1B160FB30019A490 /* i18files */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +137,15 @@
 				49E96CC01B1612F50019A490 /* es.json */,
 			);
 			name = i18files;
+			sourceTree = "<group>";
+		};
+		D59260CB1B22E642002EB240 /* SCI18Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D59260CC1B22E642002EB240 /* SCI18Manager.h */,
+				D59260CD1B22E642002EB240 /* SCI18Manager.m */,
+			);
+			path = SCI18Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,9 +251,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D59260CE1B22E642002EB240 /* SCI18Manager.m in Sources */,
 				49E96C921B15D4680019A490 /* ViewController.m in Sources */,
 				49E96C8F1B15D4680019A490 /* AppDelegate.m in Sources */,
-				49E96CBD1B15EC140019A490 /* PNMI18Manager.m in Sources */,
 				49E96C8C1B15D4680019A490 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
