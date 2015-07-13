@@ -36,7 +36,9 @@
 {
     NSDictionary *i18 = [self.languagesContent objectForKey:language];
     NSDictionary *content = [i18 objectForKey:@"content"];
-    return [content objectForKey:word];
+    NSString *i18nString = [content objectForKey:word];
+    
+    return (i18nString)? i18nString : word;
 }
 
 - (void)setContent:(NSDictionary *)content forLanguageName:(NSString *)language

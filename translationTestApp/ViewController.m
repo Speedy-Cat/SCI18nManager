@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *helloLabel;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedCtrl;
+@property (weak, nonatomic) IBOutlet UITextField *longTextField;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @end
 
@@ -52,6 +54,7 @@
         
         //set segment
         [self.segmentedCtrl setTitle:language forSegmentAtIndex:order];
+        
     }
 }
 
@@ -64,6 +67,8 @@
     //labels
     self.helloLabel.text = [[SCI18Manager sharedInstance] getI18ofString:@"hello" forLanguage:language];
     self.questionLabel.text = [[SCI18Manager sharedInstance] getI18ofString:@"how are you?" forLanguage:language];
+    
+    self.longTextField.placeholder = [[SCI18Manager sharedInstance] getI18ofString:@"write your name here" forLanguage:language];
 }
 
 - (void)didReceiveMemoryWarning {
