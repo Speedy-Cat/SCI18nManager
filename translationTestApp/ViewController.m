@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SCI18Manager.h"
+#import "CSI18Model.h"
 
 @interface ViewController ()
 
@@ -54,7 +55,6 @@
         
         //set segment
         [self.segmentedCtrl setTitle:language forSegmentAtIndex:order];
-        
     }
 }
 
@@ -65,10 +65,12 @@
     [self.segmentedCtrl setEnabled:YES forSegmentAtIndex:order];
     
     //labels
-    self.helloLabel.text = [[SCI18Manager sharedInstance] getI18ofString:@"hello" forLanguage:language];
-    self.questionLabel.text = [[SCI18Manager sharedInstance] getI18ofString:@"how are you?" forLanguage:language];
-    
-    self.longTextField.placeholder = [[SCI18Manager sharedInstance] getI18ofString:@"write your name here" forLanguage:language];
+    NSArray *elements = @[
+            [[CSI18Model alloc] initWithLabel:self.helloLabel andText:@"hello"],
+            [[CSI18Model alloc] initWithLabel:self.questionLabel andText:@"how are you?"],
+            [[CSI18Model alloc] initWithTextField:self.longTextField text:nil andPlaceholder:@"write your name here"]
+    ];
+    [[SCI18Manager sharedInstance] translateUIElements:elements forLanguage:language];
 }
 
 - (void)didReceiveMemoryWarning {

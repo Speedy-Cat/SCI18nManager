@@ -6,7 +6,10 @@
 //  Copyright (c) 2015 Adrian Ortuzar. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "SCI18Manager.h"
+#import "CSI18Model.h"
+
 
 @interface SCI18Manager ()
 
@@ -85,6 +88,31 @@
     }
     
     return language;
+}
+
+-(void)translateUIElements:(NSArray*)elements forLanguage:(NSString*)language
+{
+    for (CSI18Model *element in elements) {
+        Class class = [element.element class];
+        
+        if (class == [UILabel class]) {
+            ((UILabel*)element.element).text = [self getI18ofString:element.text forLanguage:language];
+        }
+        else if (class == [UIButton class]){
+            
+        }
+        else if(class == [UITextField class]){
+            ((UITextField*)element.element).text = [self getI18ofString:element.text forLanguage:language];
+            ((UITextField*)element.element).placeholder = [self getI18ofString:element.placeholder forLanguage:language];
+            
+        }
+        else if(class == [UITextView class]){
+            ((UITextView*)element.element).text = [self getI18ofString:element.text forLanguage:language];
+        }
+        else if(class == [UISegmentedControl class]){
+            
+        }
+    }
 }
 
 @end

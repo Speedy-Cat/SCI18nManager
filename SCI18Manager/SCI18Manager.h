@@ -98,4 +98,9 @@
  */
 @property (nonatomic) NSString *currentLanguage;
 
+/**
+ 
+ */
+-(void)translateUIElements:(NSArray*)elements forLanguage:(NSString *)language;
+
 @end
