@@ -37,6 +37,8 @@
 
 /**
  Get string translated in the language that you set.
+ If the i18n word does not exist will return the keyWord.
+ If the language is set as nil will get the current language.
  
  @param word
         string to translate

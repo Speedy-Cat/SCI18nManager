@@ -34,6 +34,10 @@
 
 - (NSString *)getI18ofString:(NSString*)word forLanguage:(NSString*)language
 {
+    //if language is nil
+    language = (language)?language:[self currentLanguage];
+    
+    //get the i18n string
     NSDictionary *i18 = [self.languagesContent objectForKey:language];
     NSDictionary *content = [i18 objectForKey:@"content"];
     NSString *i18nString = [content objectForKey:word];
