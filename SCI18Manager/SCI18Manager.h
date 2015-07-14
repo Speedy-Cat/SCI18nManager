@@ -98,4 +98,14 @@
  */
 @property (nonatomic) NSString *currentLanguage;
 
+/**
+ Translate a array of SCI18nModels for language.
+
+ @param models array of SCI18nModel to be translated
+ 
+ @param language name string that you previously set for it
+ 
+ */
+-(void)translateI18nModels:(NSArray*)models forLanguage:(NSString *)language;
+
 @end

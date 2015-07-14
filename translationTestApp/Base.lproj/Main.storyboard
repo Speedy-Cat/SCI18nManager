@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -26,32 +26,73 @@
                                     <action selector="segmentCtrlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="6oV-Au-WLB"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLi-NG-ua3">
-                                <rect key="frame" x="263" y="147" width="74" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLi-NG-ua3">
+                                <rect key="frame" x="258" y="147" width="85" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long text question?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m99-iC-BGB">
-                                <rect key="frame" x="196" y="223" width="209" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="how are you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m99-iC-BGB">
+                                <rect key="frame" x="230" y="223" width="141" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write your name here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AP8-Hq-9Wj">
+                                <rect key="frame" x="196" y="285" width="209" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="0Je-2g-t74"/>
+                                    <constraint firstAttribute="height" constant="30" id="HE7-32-fud"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvy-l5-6VO">
+                                <rect key="frame" x="251" y="332" width="99" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TgO-HM-tIt"/>
+                                    <constraint firstAttribute="width" constant="99" id="s7n-s0-rU8"/>
+                                </constraints>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gX2-wu-2zX">
+                                <rect key="frame" x="186" y="392" width="228" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="228" id="Mg7-Mp-Pbb"/>
+                                    <constraint firstAttribute="height" constant="28" id="jB2-gr-Gug"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Yellow"/>
+                                    <segment title="Red"/>
+                                    <segment title="Blue"/>
+                                    <segment title="Pink"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gX2-wu-2zX" firstAttribute="top" secondItem="Kvy-l5-6VO" secondAttribute="bottom" constant="30" id="8jI-Wz-F8y"/>
                             <constraint firstAttribute="centerX" secondItem="Isx-11-FLR" secondAttribute="centerX" id="AGk-4S-rwl"/>
+                            <constraint firstAttribute="centerX" secondItem="Kvy-l5-6VO" secondAttribute="centerX" id="Mbx-qs-cXH"/>
                             <constraint firstAttribute="centerX" secondItem="GLi-NG-ua3" secondAttribute="centerX" id="NuF-p6-qCS"/>
                             <constraint firstItem="m99-iC-BGB" firstAttribute="top" secondItem="GLi-NG-ua3" secondAttribute="bottom" constant="27" id="bXf-uP-QtN"/>
                             <constraint firstAttribute="centerX" secondItem="m99-iC-BGB" secondAttribute="centerX" id="dW6-SC-lQ2"/>
+                            <constraint firstItem="AP8-Hq-9Wj" firstAttribute="top" secondItem="m99-iC-BGB" secondAttribute="bottom" constant="33" id="edg-BW-mgp"/>
+                            <constraint firstItem="Kvy-l5-6VO" firstAttribute="top" secondItem="AP8-Hq-9Wj" secondAttribute="bottom" constant="17" id="ehW-tK-fCB"/>
+                            <constraint firstAttribute="centerX" secondItem="AP8-Hq-9Wj" secondAttribute="centerX" id="fLJ-k1-MMz"/>
+                            <constraint firstAttribute="centerX" secondItem="gX2-wu-2zX" secondAttribute="centerX" id="oi1-Bf-sa1"/>
                             <constraint firstItem="Isx-11-FLR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="qnC-r3-AzQ"/>
                             <constraint firstItem="GLi-NG-ua3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="147" id="r9j-6P-sCH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="helloLabel" destination="GLi-NG-ua3" id="83x-cE-BjF"/>
+                        <outlet property="longSegmentControl" destination="gX2-wu-2zX" id="gTv-37-mEa"/>
+                        <outlet property="longTextField" destination="AP8-Hq-9Wj" id="r4C-aZ-J6w"/>
                         <outlet property="questionLabel" destination="m99-iC-BGB" id="TvG-MT-A8q"/>
+                        <outlet property="saveButton" destination="Kvy-l5-6VO" id="vC6-6U-sg8"/>
                         <outlet property="segmentedCtrl" destination="Isx-11-FLR" id="Cs2-ml-jJm"/>
                     </connections>
                 </viewController>
