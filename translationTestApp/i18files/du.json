@@ -4,6 +4,12 @@
     "order":0,
     "content":{
         "hello":"Hallo",
-        "how are you?":"Hoe gaat het met je?"
+        "how are you?":"Hoe gaat het met je?",
+        "save":"Save",
+        "write your name here":"schrijf je naam hier",
+        "yellow":"Geel",
+        "red":"Rood",
+        "pink":"Roze",
+        "blue":"Blauw"
     }
 }

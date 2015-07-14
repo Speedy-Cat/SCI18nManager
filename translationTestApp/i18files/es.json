@@ -4,6 +4,12 @@
     "order":1,
     "content":{
         "hello":"Hola",
-        "how are you?":"Cómo estás?"
+        "how are you?":"Cómo estás?",
+        "save":"Guardar",
+        "write your name here":"Escribe tu nombre aqui",
+        "yellow":"Amarillo",
+        "red":"Rojo",
+        "pink":"Pink",
+        "blue":"Azul"
     }
 }

@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Adrian Ortuzar. All rights reserved.
 //
 
-#import "CSI18Model.h"
+#import "SCI18nModel.h"
 
-@implementation CSI18Model
+@implementation SCI18nModel
 
 -(id)initWithLabel:(UILabel*)label andText:(NSString*)text
 {
@@ -40,5 +40,26 @@
     }
     return self;
 }
+
+-(id)initWithSegmentControl:(UISegmentedControl*)segmentControl andTitles:(NSArray*)segmentTitles
+{
+    self = [self init];
+    if (self) {
+        self.element = segmentControl;
+        self.segmentTitles = segmentTitles;
+    }
+    return self;
+}
+
+-(id)initWithButton:(UIButton*)button andText:(NSString*)text
+{
+    self = [self init];
+    if (self) {
+        self.element = button;
+        self.text = text;
+    }
+    return self;
+}
+
 
 @end

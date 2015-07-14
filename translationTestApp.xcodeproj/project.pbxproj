@@ -16,7 +16,7 @@
 		49E96CA61B15D4690019A490 /* translationTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96CA51B15D4690019A490 /* translationTestAppTests.m */; };
 		49E96CC11B1612F50019A490 /* du.json in Resources */ = {isa = PBXBuildFile; fileRef = 49E96CBF1B1612F50019A490 /* du.json */; };
 		49E96CC21B1612F50019A490 /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 49E96CC01B1612F50019A490 /* es.json */; };
-		D50140881B543F8300BB6A2F /* CSI18Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D50140871B543F8300BB6A2F /* CSI18Model.m */; };
+		D50140881B543F8300BB6A2F /* SCI18nModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D50140871B543F8300BB6A2F /* SCI18nModel.m */; };
 		D59260CE1B22E642002EB240 /* SCI18Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = D59260CD1B22E642002EB240 /* SCI18Manager.m */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +48,8 @@
 		49E96CB61B15E6BA0019A490 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		49E96CBF1B1612F50019A490 /* du.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = du.json; path = i18files/du.json; sourceTree = "<group>"; };
 		49E96CC01B1612F50019A490 /* es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = es.json; path = i18files/es.json; sourceTree = "<group>"; };
-		D50140861B543F8300BB6A2F /* CSI18Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSI18Model.h; sourceTree = "<group>"; };
-		D50140871B543F8300BB6A2F /* CSI18Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSI18Model.m; sourceTree = "<group>"; };
+		D50140861B543F8300BB6A2F /* SCI18nModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCI18nModel.h; sourceTree = "<group>"; };
+		D50140871B543F8300BB6A2F /* SCI18nModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18nModel.m; sourceTree = "<group>"; };
 		D59260CC1B22E642002EB240 /* SCI18Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCI18Manager.h; sourceTree = "<group>"; };
 		D59260CD1B22E642002EB240 /* SCI18Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18Manager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,8 +147,8 @@
 			children = (
 				D59260CC1B22E642002EB240 /* SCI18Manager.h */,
 				D59260CD1B22E642002EB240 /* SCI18Manager.m */,
-				D50140861B543F8300BB6A2F /* CSI18Model.h */,
-				D50140871B543F8300BB6A2F /* CSI18Model.m */,
+				D50140861B543F8300BB6A2F /* SCI18nModel.h */,
+				D50140871B543F8300BB6A2F /* SCI18nModel.m */,
 			);
 			path = SCI18Manager;
 			sourceTree = "<group>";
@@ -257,7 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D59260CE1B22E642002EB240 /* SCI18Manager.m in Sources */,
-				D50140881B543F8300BB6A2F /* CSI18Model.m in Sources */,
+				D50140881B543F8300BB6A2F /* SCI18nModel.m in Sources */,
 				49E96C921B15D4680019A490 /* ViewController.m in Sources */,
 				49E96C8F1B15D4680019A490 /* AppDelegate.m in Sources */,
 				49E96C8C1B15D4680019A490 /* main.m in Sources */,

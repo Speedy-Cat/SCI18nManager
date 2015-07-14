@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SCI18Manager.h"
-#import "CSI18Model.h"
+#import "SCI18nModel.h"
 
 @interface ViewController ()
 
@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedCtrl;
 @property (weak, nonatomic) IBOutlet UITextField *longTextField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *longSegmentControl;
 
 @end
 
@@ -64,13 +65,17 @@
     int order = [[SCI18Manager sharedInstance] getOrderForLanguage:language];
     [self.segmentedCtrl setEnabled:YES forSegmentAtIndex:order];
     
+    NSArray *i18nSegmentTitles = @[@"yellow",@"red",@"blue",@"pink"];
+    
     //labels
     NSArray *elements = @[
-            [[CSI18Model alloc] initWithLabel:self.helloLabel andText:@"hello"],
-            [[CSI18Model alloc] initWithLabel:self.questionLabel andText:@"how are you?"],
-            [[CSI18Model alloc] initWithTextField:self.longTextField text:nil andPlaceholder:@"write your name here"]
+            [[SCI18nModel alloc] initWithLabel:self.helloLabel andText:@"hello"],
+            [[SCI18nModel alloc] initWithLabel:self.questionLabel andText:@"how are you?"],
+            [[SCI18nModel alloc] initWithTextField:self.longTextField text:nil andPlaceholder:@"write your name here"],
+            [[SCI18nModel alloc] initWithSegmentControl:self.longSegmentControl andTitles:i18nSegmentTitles],
+            [[SCI18nModel alloc] initWithButton:self.saveButton andText:@"save"]
     ];
-    [[SCI18Manager sharedInstance] translateUIElements:elements forLanguage:language];
+    [[SCI18Manager sharedInstance] translateI18nModels:elements forLanguage:language];
 }
 
 - (void)didReceiveMemoryWarning {

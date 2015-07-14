@@ -89,6 +89,7 @@
                     </view>
                     <connections>
                         <outlet property="helloLabel" destination="GLi-NG-ua3" id="83x-cE-BjF"/>
+                        <outlet property="longSegmentControl" destination="gX2-wu-2zX" id="gTv-37-mEa"/>
                         <outlet property="longTextField" destination="AP8-Hq-9Wj" id="r4C-aZ-J6w"/>
                         <outlet property="questionLabel" destination="m99-iC-BGB" id="TvG-MT-A8q"/>
                         <outlet property="saveButton" destination="Kvy-l5-6VO" id="vC6-6U-sg8"/>
