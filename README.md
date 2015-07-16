@@ -12,10 +12,8 @@ NSString *value = [[SCI18nElement alloc] getI18nForKey:@"Hello" andLanguage:@"Sp
 ### Easy way to i18n multiples UI elements (UILabels, UITextFiels, UITextViews, UIButtons, UISegmentControl) ###
 
 ```
-NSArray *i18nSegmentTitles = @[@"yellow",@"red",@"blue",@"pink"];
-
-//labels
 NSArray *i18nSegmentKeyTitles = @[@"yellow",@"red",@"blue",@"pink"];
+
 NSArray *elements = @[
     [[SCI18nElement alloc] initWithLabel:self.helloLabel andKeyText:@"hello"],
     [[SCI18nElement alloc] initWithTextField:self.longTextField keyText:nil andKeyPlaceholder:@"write your name here"],
