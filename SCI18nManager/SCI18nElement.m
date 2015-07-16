@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Adrian Ortuzar. All rights reserved.
 //
 
-#import "SCI18nModel.h"
+#import "SCI18nElement.h"
 
-@implementation SCI18nModel
+@implementation SCI18nElement
 
--(id)initWithLabel:(UILabel*)label andText:(NSString*)text
+-(id)initWithLabel:(UILabel*)label andKeyText:(NSString*)text
 {
     self = [self init];
     if (self) {
@@ -30,7 +30,7 @@
     return self;
 }
 
--(id)initWithTextField:(UITextField*)textField text:(NSString*)text andPlaceholder:(NSString*)placeholder
+-(id)initWithTextField:(UITextField*)textField keyText:(NSString*)text andKeyPlaceholder:(NSString*)placeholder
 {
     self = [self init];
     if (self) {
@@ -41,7 +41,7 @@
     return self;
 }
 
--(id)initWithSegmentControl:(UISegmentedControl*)segmentControl andTitles:(NSArray*)segmentTitles
+-(id)initWithSegmentControl:(UISegmentedControl*)segmentControl andKeyTitles:(NSArray*)segmentTitles
 {
     self = [self init];
     if (self) {
@@ -51,7 +51,7 @@
     return self;
 }
 
--(id)initWithButton:(UIButton*)button andText:(NSString*)text
+-(id)initWithButton:(UIButton*)button andKeyText:(NSString*)text
 {
     self = [self init];
     if (self) {

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SCI18nManager.h"
-#import "SCI18nModel.h"
+#import "SCI18nElement.h"
 
 @interface ViewController ()
 
@@ -53,7 +53,7 @@
         
         //setupI18manager
         [[SCI18nManager sharedInstance] setContent:jsonDic forLanguageName:language];
-        
+
         //set segment
         [self.segmentedCtrl setTitle:language forSegmentAtIndex:order];
     }
@@ -61,20 +61,20 @@
 
 - (void)swichtForLanguage:(NSString*)language{
 
-    //segment
+    // change segment language
     int order = [[SCI18nManager sharedInstance] getOrderForLanguage:language];
     [self.segmentedCtrl setEnabled:YES forSegmentAtIndex:order];
     
-    NSArray *i18nSegmentTitles = @[@"yellow",@"red",@"blue",@"pink"];
-    
+    // change the language for text in elements
+    NSArray *i18nSegmentKeyTitles = @[@"yellow",@"red",@"blue",@"pink"];
     NSArray *elements = @[
-            [[SCI18nModel alloc] initWithLabel:self.helloLabel andText:@"hello"],
-            [[SCI18nModel alloc] initWithLabel:self.questionLabel andText:@"how are you?"],
-            [[SCI18nModel alloc] initWithTextField:self.longTextField text:nil andPlaceholder:@"write your name here"],
-            [[SCI18nModel alloc] initWithSegmentControl:self.longSegmentControl andTitles:i18nSegmentTitles],
-            [[SCI18nModel alloc] initWithButton:self.saveButton andText:@"save"]
+            [[SCI18nElement alloc] initWithLabel:self.helloLabel andKeyText:@"hello"],
+            [[SCI18nElement alloc] initWithLabel:self.questionLabel andKeyText:@"how are you?"],
+            [[SCI18nElement alloc] initWithTextField:self.longTextField keyText:nil andKeyPlaceholder:@"write your name here"],
+            [[SCI18nElement alloc] initWithSegmentControl:self.longSegmentControl andKeyTitles:i18nSegmentKeyTitles],
+            [[SCI18nElement alloc] initWithButton:self.saveButton andKeyText:@"save"]
     ];
-    [[SCI18nManager sharedInstance] translateI18nModels:elements forLanguage:language];
+    [[SCI18nManager sharedInstance] translateI18nElements:elements forLanguage:language];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,37 +88,6 @@
     
     NSString *language = [[SCI18nManager sharedInstance] getLanguageForOrder:(int)self.segmentedCtrl.selectedSegmentIndex];
     [self swichtForLanguage:language];
-}
-
-- (NSString*)getLanguageFromSegmentCtrlIndex:(int)index
-{
-    NSString *language;
-    
-    switch (index) {
-        case 0:
-            language = @"du";
-            break;
-        case 1:
-            language = @"es";
-            break;
-        default:
-            break;
-    }
-    
-    return language;
-}
-
-- (int)getIndexSegmentCtrlForLanguage:(NSString*)language
-{
-    int index;
-    
-    if ([language isEqualToString:@"du"]) {
-        index = 0;
-    }else if([language isEqualToString:@"es"]){
-        index = 1;
-    }
-    
-    return index;
 }
 
 @end

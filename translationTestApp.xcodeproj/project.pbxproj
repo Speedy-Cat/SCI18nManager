@@ -10,7 +10,7 @@
 		49DB36A11B57A5D60029C8D6 /* SCI18nManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB36A01B57A5D60029C8D6 /* SCI18nManager.m */; };
 		49DB36A51B57A62D0029C8D6 /* du.json in Resources */ = {isa = PBXBuildFile; fileRef = 49DB36A31B57A62D0029C8D6 /* du.json */; };
 		49DB36A61B57A62D0029C8D6 /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 49DB36A41B57A62D0029C8D6 /* es.json */; };
-		49DB36A91B57A85B0029C8D6 /* SCI18nModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB36A81B57A85B0029C8D6 /* SCI18nModel.m */; };
+		49DB36A91B57A85B0029C8D6 /* SCI18nElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB36A81B57A85B0029C8D6 /* SCI18nElement.m */; };
 		49E96C8C1B15D4680019A490 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96C8B1B15D4680019A490 /* main.m */; };
 		49E96C8F1B15D4680019A490 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96C8E1B15D4680019A490 /* AppDelegate.m */; };
 		49E96C921B15D4680019A490 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96C911B15D4680019A490 /* ViewController.m */; };
@@ -35,8 +35,8 @@
 		49DB36A01B57A5D60029C8D6 /* SCI18nManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18nManager.m; sourceTree = "<group>"; };
 		49DB36A31B57A62D0029C8D6 /* du.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = du.json; sourceTree = "<group>"; };
 		49DB36A41B57A62D0029C8D6 /* es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = es.json; sourceTree = "<group>"; };
-		49DB36A71B57A85B0029C8D6 /* SCI18nModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCI18nModel.h; sourceTree = "<group>"; };
-		49DB36A81B57A85B0029C8D6 /* SCI18nModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18nModel.m; sourceTree = "<group>"; };
+		49DB36A71B57A85B0029C8D6 /* SCI18nElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCI18nElement.h; sourceTree = "<group>"; };
+		49DB36A81B57A85B0029C8D6 /* SCI18nElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18nElement.m; sourceTree = "<group>"; };
 		49E96C861B15D4680019A490 /* translationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = translationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E96C8A1B15D4680019A490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E96C8B1B15D4680019A490 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 		49DB369E1B57A5D60029C8D6 /* SCI18nManager */ = {
 			isa = PBXGroup;
 			children = (
-				49DB36A71B57A85B0029C8D6 /* SCI18nModel.h */,
-				49DB36A81B57A85B0029C8D6 /* SCI18nModel.m */,
+				49DB36A71B57A85B0029C8D6 /* SCI18nElement.h */,
+				49DB36A81B57A85B0029C8D6 /* SCI18nElement.m */,
 				49DB369F1B57A5D60029C8D6 /* SCI18nManager.h */,
 				49DB36A01B57A5D60029C8D6 /* SCI18nManager.m */,
 			);
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49DB36A91B57A85B0029C8D6 /* SCI18nModel.m in Sources */,
+				49DB36A91B57A85B0029C8D6 /* SCI18nElement.m in Sources */,
 				49DB36A11B57A5D60029C8D6 /* SCI18nManager.m in Sources */,
 				49E96C921B15D4680019A490 /* ViewController.m in Sources */,
 				49E96C8F1B15D4680019A490 /* AppDelegate.m in Sources */,

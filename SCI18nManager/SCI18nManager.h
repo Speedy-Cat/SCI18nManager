@@ -47,7 +47,7 @@
  
  @return word translated
  */
-- (NSString *)getI18ofString:(NSString*)word forLanguage:(NSString*)language;
+- (NSString *)getI18nForKey:(NSString*)word andLanguage:(NSString*)language;
 
 
 /**
@@ -58,7 +58,7 @@
  {
     "language":"Dutch",
      "acronym":"du",
-     "order":0,
+     "order":0, // if you want to display the languages in the list and set an order
      "content":{
         "hello":"Hallo",
         "how are you?":"Hoe gaat het met je?"
@@ -101,11 +101,11 @@
 /**
  Translate a array of SCI18nModels for language.
 
- @param models array of SCI18nModel to be translated
+ @param elements array of SCI18nElement to be translated
  
  @param language name string that you previously set for it
  
  */
--(void)translateI18nModels:(NSArray*)models forLanguage:(NSString *)language;
+-(void)translateI18nElements:(NSArray*)elements forLanguage:(NSString *)language;
 
 @end

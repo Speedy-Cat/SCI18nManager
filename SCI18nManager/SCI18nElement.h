@@ -12,7 +12,7 @@
 /**
  SCI18nModel is a model of data that you can use to translate UIElements like UILabels, UITextViews, UITextFields, UISegmentsControl or UIButtons.
  */
-@interface SCI18nModel : NSObject
+@interface SCI18nElement : NSObject
 
 /**
  UIElement can be UILabels, UITextViews, UITextFields, UISegmentsControl or UIButtons
@@ -37,7 +37,7 @@
 /**
  UILabel initialize
  */
--(id)initWithLabel:(UILabel*)label andText:(NSString*)text;
+-(id)initWithLabel:(UILabel*)label andKeyText:(NSString*)text;
 
 /**
  UITextView initialize
@@ -47,16 +47,19 @@
 /**
   UITextField initialize
  */
--(id)initWithTextField:(UITextField*)textField text:(NSString*)text andPlaceholder:(NSString*)placeholder;
+-(id)initWithTextField:(UITextField*)textField keyText:(NSString*)text andKeyPlaceholder:(NSString*)placeholder;
 
 /**
   UISegementControl initialize
  */
--(id)initWithSegmentControl:(UISegmentedControl*)segmentControl andTitles:(NSArray*)segmentTitles;
+-(id)initWithSegmentControl:(UISegmentedControl*)segmentControl andKeyTitles:(NSArray*)segmentTitles;
 
 /**
   UIButton initialize
  */
--(id)initWithButton:(UIButton*)button andText:(NSString*)text;
+-(id)initWithButton:(UIButton*)button andKeyText:(NSString*)text;
+
+#define NSLocalizedString(key, comment) \
+[[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:nil]
 
 @end
