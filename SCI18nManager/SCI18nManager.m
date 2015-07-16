@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 Adrian Ortuzar. All rights reserved.
 //
 
-#import "SCI18Manager.h"
+#import "SCI18nManager.h"
 
-@interface SCI18Manager ()
+@interface SCI18nManager ()
 
 @end
 
-@implementation SCI18Manager
+@implementation SCI18nManager
 
 + (id)sharedInstance
 {
-    static SCI18Manager *sharedInstance = nil;
+    static SCI18nManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];

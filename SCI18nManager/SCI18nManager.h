@@ -19,7 +19,7 @@
  - translate string previouly set up
  
  */
-@interface SCI18Manager : NSObject
+@interface SCI18nManager : NSObject
 
 /**
  'sharedInstance' is the init method for SCI18Manager.

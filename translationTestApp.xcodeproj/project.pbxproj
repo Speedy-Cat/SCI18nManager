@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49DB36A11B57A5D60029C8D6 /* SCI18nManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB36A01B57A5D60029C8D6 /* SCI18nManager.m */; };
+		49DB36A51B57A62D0029C8D6 /* du.json in Resources */ = {isa = PBXBuildFile; fileRef = 49DB36A31B57A62D0029C8D6 /* du.json */; };
+		49DB36A61B57A62D0029C8D6 /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 49DB36A41B57A62D0029C8D6 /* es.json */; };
 		49E96C8C1B15D4680019A490 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96C8B1B15D4680019A490 /* main.m */; };
 		49E96C8F1B15D4680019A490 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96C8E1B15D4680019A490 /* AppDelegate.m */; };
 		49E96C921B15D4680019A490 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96C911B15D4680019A490 /* ViewController.m */; };
@@ -14,9 +17,6 @@
 		49E96C971B15D4690019A490 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E96C961B15D4690019A490 /* Images.xcassets */; };
 		49E96C9A1B15D4690019A490 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49E96C981B15D4690019A490 /* LaunchScreen.xib */; };
 		49E96CA61B15D4690019A490 /* translationTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E96CA51B15D4690019A490 /* translationTestAppTests.m */; };
-		49E96CC11B1612F50019A490 /* du.json in Resources */ = {isa = PBXBuildFile; fileRef = 49E96CBF1B1612F50019A490 /* du.json */; };
-		49E96CC21B1612F50019A490 /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 49E96CC01B1612F50019A490 /* es.json */; };
-		D59260CE1B22E642002EB240 /* SCI18Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = D59260CD1B22E642002EB240 /* SCI18Manager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49DB369F1B57A5D60029C8D6 /* SCI18nManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCI18nManager.h; sourceTree = "<group>"; };
+		49DB36A01B57A5D60029C8D6 /* SCI18nManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18nManager.m; sourceTree = "<group>"; };
+		49DB36A31B57A62D0029C8D6 /* du.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = du.json; sourceTree = "<group>"; };
+		49DB36A41B57A62D0029C8D6 /* es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = es.json; sourceTree = "<group>"; };
 		49E96C861B15D4680019A490 /* translationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = translationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E96C8A1B15D4680019A490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E96C8B1B15D4680019A490 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,10 +49,6 @@
 		49E96CA51B15D4690019A490 /* translationTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = translationTestAppTests.m; sourceTree = "<group>"; };
 		49E96CB51B15E6BA0019A490 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Main.strings"; sourceTree = "<group>"; };
 		49E96CB61B15E6BA0019A490 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		49E96CBF1B1612F50019A490 /* du.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = du.json; path = i18files/du.json; sourceTree = "<group>"; };
-		49E96CC01B1612F50019A490 /* es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = es.json; path = i18files/es.json; sourceTree = "<group>"; };
-		D59260CC1B22E642002EB240 /* SCI18Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCI18Manager.h; sourceTree = "<group>"; };
-		D59260CD1B22E642002EB240 /* SCI18Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18Manager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +69,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49DB369E1B57A5D60029C8D6 /* SCI18nManager */ = {
+			isa = PBXGroup;
+			children = (
+				49DB369F1B57A5D60029C8D6 /* SCI18nManager.h */,
+				49DB36A01B57A5D60029C8D6 /* SCI18nManager.m */,
+			);
+			path = SCI18nManager;
+			sourceTree = "<group>";
+		};
+		49DB36A21B57A62D0029C8D6 /* i18nFiles */ = {
+			isa = PBXGroup;
+			children = (
+				49DB36A31B57A62D0029C8D6 /* du.json */,
+				49DB36A41B57A62D0029C8D6 /* es.json */,
+			);
+			path = i18nFiles;
+			sourceTree = "<group>";
+		};
 		49E96C7D1B15D4680019A490 = {
 			isa = PBXGroup;
 			children = (
-				D59260CB1B22E642002EB240 /* SCI18Manager */,
+				49DB369E1B57A5D60029C8D6 /* SCI18nManager */,
 				49E96C881B15D4680019A490 /* translationTestApp */,
 				49E96CA21B15D4690019A490 /* translationTestAppTests */,
 				49E96C871B15D4680019A490 /* Products */,
@@ -91,7 +109,7 @@
 		49E96C881B15D4680019A490 /* translationTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				49E96CBE1B160FB30019A490 /* i18files */,
+				49DB36A21B57A62D0029C8D6 /* i18nFiles */,
 				49E96C8D1B15D4680019A490 /* AppDelegate.h */,
 				49E96C8E1B15D4680019A490 /* AppDelegate.m */,
 				49E96C901B15D4680019A490 /* ViewController.h */,
@@ -128,24 +146,6 @@
 				49E96CA41B15D4690019A490 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		49E96CBE1B160FB30019A490 /* i18files */ = {
-			isa = PBXGroup;
-			children = (
-				49E96CBF1B1612F50019A490 /* du.json */,
-				49E96CC01B1612F50019A490 /* es.json */,
-			);
-			name = i18files;
-			sourceTree = "<group>";
-		};
-		D59260CB1B22E642002EB240 /* SCI18Manager */ = {
-			isa = PBXGroup;
-			children = (
-				D59260CC1B22E642002EB240 /* SCI18Manager.h */,
-				D59260CD1B22E642002EB240 /* SCI18Manager.m */,
-			);
-			path = SCI18Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +229,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E96CC21B1612F50019A490 /* es.json in Resources */,
-				49E96CC11B1612F50019A490 /* du.json in Resources */,
+				49DB36A61B57A62D0029C8D6 /* es.json in Resources */,
+				49DB36A51B57A62D0029C8D6 /* du.json in Resources */,
 				49E96C951B15D4680019A490 /* Main.storyboard in Resources */,
 				49E96C9A1B15D4690019A490 /* LaunchScreen.xib in Resources */,
 				49E96C971B15D4690019A490 /* Images.xcassets in Resources */,
@@ -251,7 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D59260CE1B22E642002EB240 /* SCI18Manager.m in Sources */,
+				49DB36A11B57A5D60029C8D6 /* SCI18nManager.m in Sources */,
 				49E96C921B15D4680019A490 /* ViewController.m in Sources */,
 				49E96C8F1B15D4680019A490 /* AppDelegate.m in Sources */,
 				49E96C8C1B15D4680019A490 /* main.m in Sources */,
