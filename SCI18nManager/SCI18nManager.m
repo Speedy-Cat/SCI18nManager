@@ -6,7 +6,9 @@
 //  Copyright (c) 2015 Adrian Ortuzar. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "SCI18nManager.h"
+#import "SCI18nModel.h"
 
 @interface SCI18nManager ()
 
@@ -34,9 +36,15 @@
 
 - (NSString *)getI18ofString:(NSString*)word forLanguage:(NSString*)language
 {
+    //if language is nil
+    language = (language)?language:[self currentLanguage];
+    
+    //get the i18n string
     NSDictionary *i18 = [self.languagesContent objectForKey:language];
     NSDictionary *content = [i18 objectForKey:@"content"];
-    return [content objectForKey:word];
+    NSString *i18nString = [content objectForKey:word];
+    
+    return (i18nString)? i18nString : word;
 }
 
 - (void)setContent:(NSDictionary *)content forLanguageName:(NSString *)language
@@ -79,6 +87,35 @@
     }
     
     return language;
+}
+
+-(void)translateI18nModels:(NSArray*)models forLanguage:(NSString*)language
+{
+    for (SCI18nModel *i18nModel in models) {
+        
+        if ([i18nModel.element isKindOfClass:[UILabel class]]) {
+            ((UILabel*)i18nModel.element).text = [self getI18ofString:i18nModel.text forLanguage:language];
+        }
+        else if ([i18nModel.element isKindOfClass:[UIButton class]]){
+            [((UIButton*)i18nModel.element) setTitle:[self getI18ofString:i18nModel.text forLanguage:language]
+                                          forState:UIControlStateNormal];
+        }
+        else if([i18nModel.element isKindOfClass:[UITextField class]]){
+            ((UITextField*)i18nModel.element).text = [self getI18ofString:i18nModel.text forLanguage:language];
+            ((UITextField*)i18nModel.element).placeholder = [self getI18ofString:i18nModel.placeholder forLanguage:language];
+            
+        }
+        else if([i18nModel.element isKindOfClass:[UITextView class]]){
+            ((UITextView*)i18nModel.element).text = [self getI18ofString:i18nModel.text forLanguage:language];
+        }
+        else if([i18nModel.element isKindOfClass:[UISegmentedControl class]]){
+            for(int i = 0; i18nModel.segmentTitles.count > i; i++){
+                NSString *i18nKey = (NSString*)i18nModel.segmentTitles[i];
+                NSString *i18nValue = [self getI18ofString:i18nKey forLanguage:language];
+                [((UISegmentedControl*)i18nModel.element) setTitle:i18nValue forSegmentAtIndex:i];
+            }
+        }
+    }
 }
 
 @end

@@ -37,6 +37,8 @@
 
 /**
  Get string translated in the language that you set.
+ If the i18n word does not exist will return the keyWord.
+ If the language is set as nil will get the current language.
  
  @param word
         string to translate
@@ -95,5 +97,15 @@
  Language that is currently display in the app.
  */
 @property (nonatomic) NSString *currentLanguage;
+
+/**
+ Translate a array of SCI18nModels for language.
+
+ @param models array of SCI18nModel to be translated
+ 
+ @param language name string that you previously set for it
+ 
+ */
+-(void)translateI18nModels:(NSArray*)models forLanguage:(NSString *)language;
 
 @end
