@@ -29,7 +29,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        self.languagesContent = [[NSMutableDictionary alloc] init];
+        self.languagesContent = [NSMutableDictionary new];
     }
     return self;
 }
@@ -40,8 +40,8 @@
     language = (language)?language:[self currentLanguage];
     
     //get the i18n string
-    NSDictionary *i18 = [self.languagesContent objectForKey:language];
-    NSDictionary *content = [i18 objectForKey:@"content"];
+    NSDictionary *i18 = self.languagesContent[language];
+    NSDictionary *content = i18[@"content"];
     NSString *i18nString = [content objectForKey:word];
     
     return (i18nString)? i18nString : word;
@@ -68,7 +68,7 @@
 {
     NSDictionary *langsContent = self.languagesContent;
     NSDictionary *content = [langsContent objectForKey:language];
-    int order = (int)[[content objectForKey:@"order"] integerValue];
+    int order = [content[@"order"] intValue];
     
     return order;
 }
@@ -79,7 +79,8 @@
 
     for (NSString *languageKey in self.languagesContent) {
         NSDictionary *content = [self.languagesContent objectForKey:languageKey];
-        int contentOrder = (int)[[content objectForKey:@"order"] integerValue];
+
+        int contentOrder = [content[@"order"] intValue];
         if (order == contentOrder) {
             language = languageKey;
             break;
