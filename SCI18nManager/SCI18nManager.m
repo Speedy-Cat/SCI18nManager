@@ -21,7 +21,7 @@
     static SCI18nManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] init];
+        sharedInstance = [self new];
     });
     return sharedInstance;
 }
@@ -42,7 +42,7 @@
     //get the i18n string
     NSDictionary *i18 = self.languagesContent[language];
     NSDictionary *content = i18[@"content"];
-    NSString *i18nString = [content objectForKey:word];
+    NSString *i18nString = content[word];
     
     return (i18nString)? i18nString : word;
 }
@@ -65,7 +65,7 @@
 - (int)getOrderForLanguage:(NSString*)language
 {
     NSDictionary *langsContent = self.languagesContent;
-    NSDictionary *content = [langsContent objectForKey:language];
+    NSDictionary *content = langsContent[language];
     int order = [content[@"order"] intValue];
     
     return order;
@@ -76,7 +76,7 @@
     NSString *language;
 
     for (NSString *languageKey in self.languagesContent) {
-        NSDictionary *content = [self.languagesContent objectForKey:languageKey];
+        NSDictionary *content = self.languagesContent[languageKey];
 
         int contentOrder = [content[@"order"] intValue];
         if (order == contentOrder) {
