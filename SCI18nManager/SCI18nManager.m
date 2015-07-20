@@ -57,7 +57,7 @@
     if (!_currentLanguage) {
         NSArray *values = [_languagesContent allKeys]; // Warning: this order may change.;
         if ([values count]) {
-            _currentLanguage = values[0];
+            _currentLanguage = [values firstObject];
         }
     }
     
