@@ -29,67 +29,72 @@
 - (id)init
 {
     if (self = [super init]) {
-        self.languagesContent = [[NSMutableDictionary alloc] init];
+
     }
     return self;
 }
 
-- (NSString *)getI18nForKey:(NSString*)word andLanguage:(NSString*)language
+-(NSMutableArray *)languages
 {
-    //if language is nil
-    language = (language)?language:[self currentLanguage];
+    if (!_languages) {
+        _languages = [[NSMutableArray alloc] init];
+    }
+    return _languages;
+}
+
+- (NSString *)getI18nForKey:(NSString*)key andLanguage:(SCI18nLanguage*)language
+{
+    // if langName is nill use the current language
+    if (!language) {
+        language = [self currentLanguage];
+    }
     
     //get the i18n string
-    NSDictionary *i18 = [self.languagesContent objectForKey:language];
-    NSDictionary *content = [i18 objectForKey:@"content"];
-    NSString *i18nString = [content objectForKey:word];
+    NSString *i18nString = [language.content objectForKey:key];
     
-    return (i18nString)? i18nString : word;
+    // if the i18nString does not exist return the key
+    return (i18nString)? i18nString : key;
 }
 
-- (void)setContent:(NSDictionary *)content forLanguageName:(NSString *)language
-{
-    [self.languagesContent setObject:content forKey:language];
-}
-
-- (NSString *)currentLanguage 
+- (SCI18nLanguage *)currentLanguage
 {
     if (!_currentLanguage) {
-        NSArray *values = [_languagesContent allKeys]; // Warning: this order may change.;
-        if ([values count]) {
-            _currentLanguage = values[0];
+        if ([self.languages count]) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.order == 0" ];
+            NSArray *result = [self.languages filteredArrayUsingPredicate:predicate];
+            _currentLanguage = result[0];
         }
     }
     
     return _currentLanguage;
 }
 
-- (int)getOrderForLanguage:(NSString*)language
+- (SCI18nLanguage*)getLanguageForOrder:(int)order
 {
-    NSDictionary *langsContent = self.languagesContent;
-    NSDictionary *content = [langsContent objectForKey:language];
-    int order = (int)[[content objectForKey:@"order"] integerValue];
-    
-    return order;
-}
-
-- (NSString*)getLanguageForOrder:(int)order
-{
-    NSString *language;
-
-    for (NSString *languageKey in self.languagesContent) {
-        NSDictionary *content = [self.languagesContent objectForKey:languageKey];
-        int contentOrder = (int)[[content objectForKey:@"order"] integerValue];
-        if (order == contentOrder) {
-            language = languageKey;
-            break;
-        }
+    SCI18nLanguage *langResult;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.order == %d", order];
+    NSArray *result = [self.languages filteredArrayUsingPredicate:predicate];
+    if (result.count) {
+        langResult = result[0];
     }
     
-    return language;
+    return langResult;
 }
 
--(void)translateI18nElements:(NSArray*)models forLanguage:(NSString*)language
+- (SCI18nLanguage*)getLanguageForLangName:(NSString*)langName
+{
+    SCI18nLanguage *langResult;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name == %@", langName];
+    NSArray *result = [self.languages filteredArrayUsingPredicate:predicate];
+    if (result.count) {
+        langResult = result[0];
+    }
+    
+    return langResult;
+}
+
+
+-(void)translateI18nElements:(NSArray*)models forLanguage:(SCI18nLanguage*)language
 {
     for (SCI18nElement *i18nModel in models) {
         

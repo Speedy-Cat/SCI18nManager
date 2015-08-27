@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SCI18nManager.h"
 #import "SCI18nElement.h"
+#import "SCI18nLanguage.h"
 
 @interface ViewController ()
 
@@ -29,7 +30,7 @@
     [self setupI18manager];
     
     // get current language and switch
-    NSString *currentLanguage = [[SCI18nManager sharedInstance] currentLanguage];
+    SCI18nLanguage *currentLanguage = [[SCI18nManager sharedInstance] currentLanguage];
     [self swichtForLanguage:currentLanguage];
 }
 
@@ -48,22 +49,21 @@
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:objectData
                                                                 options:NSJSONReadingMutableContainers
                                                                   error:nil];
-        NSString *language = [jsonDic objectForKey:@"language"];
-        int order = (int)[[jsonDic objectForKey:@"order"] integerValue];
+        SCI18nLanguage *language = [[SCI18nLanguage alloc] initWithDictionary:jsonDic];
         
-        //setupI18manager
-        [[SCI18nManager sharedInstance] setContent:jsonDic forLanguageName:language];
+        // set language in i18n manager
+        NSMutableArray *languages = ((SCI18nManager*)[SCI18nManager sharedInstance]).languages;
+        [languages addObject:language];
 
         //set segment
-        [self.segmentedCtrl setTitle:language forSegmentAtIndex:order];
+        [self.segmentedCtrl setTitle:language.name forSegmentAtIndex:language.order];
     }
 }
 
-- (void)swichtForLanguage:(NSString*)language{
+- (void)swichtForLanguage:(SCI18nLanguage*)language{
 
     // change segment language
-    int order = [[SCI18nManager sharedInstance] getOrderForLanguage:language];
-    [self.segmentedCtrl setEnabled:YES forSegmentAtIndex:order];
+    [self.segmentedCtrl setEnabled:YES forSegmentAtIndex:language.order];
     
     // change the language for text in elements
     NSArray *i18nSegmentKeyTitles = @[@"yellow",@"red",@"blue",@"pink"];
@@ -86,7 +86,7 @@
 
 - (IBAction)segmentCtrlAction:(id)sender {
     
-    NSString *language = [[SCI18nManager sharedInstance] getLanguageForOrder:(int)self.segmentedCtrl.selectedSegmentIndex];
+    SCI18nLanguage *language = [[SCI18nManager sharedInstance] getLanguageForOrder:(int)self.segmentedCtrl.selectedSegmentIndex];
     [self swichtForLanguage:language];
 }
 

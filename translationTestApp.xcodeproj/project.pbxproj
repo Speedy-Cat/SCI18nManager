@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49A9628D1B8F167400AE42D8 /* SCI18nLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A9628C1B8F167400AE42D8 /* SCI18nLanguage.m */; };
 		49DB36A11B57A5D60029C8D6 /* SCI18nManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB36A01B57A5D60029C8D6 /* SCI18nManager.m */; };
 		49DB36A51B57A62D0029C8D6 /* du.json in Resources */ = {isa = PBXBuildFile; fileRef = 49DB36A31B57A62D0029C8D6 /* du.json */; };
 		49DB36A61B57A62D0029C8D6 /* es.json in Resources */ = {isa = PBXBuildFile; fileRef = 49DB36A41B57A62D0029C8D6 /* es.json */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49A9628B1B8F167400AE42D8 /* SCI18nLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCI18nLanguage.h; sourceTree = "<group>"; };
+		49A9628C1B8F167400AE42D8 /* SCI18nLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18nLanguage.m; sourceTree = "<group>"; };
 		49DB369F1B57A5D60029C8D6 /* SCI18nManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCI18nManager.h; sourceTree = "<group>"; };
 		49DB36A01B57A5D60029C8D6 /* SCI18nManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCI18nManager.m; sourceTree = "<group>"; };
 		49DB36A31B57A62D0029C8D6 /* du.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = du.json; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				49DB36A81B57A85B0029C8D6 /* SCI18nElement.m */,
 				49DB369F1B57A5D60029C8D6 /* SCI18nManager.h */,
 				49DB36A01B57A5D60029C8D6 /* SCI18nManager.m */,
+				49A9628B1B8F167400AE42D8 /* SCI18nLanguage.h */,
+				49A9628C1B8F167400AE42D8 /* SCI18nLanguage.m */,
 			);
 			path = SCI18nManager;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				49E96C921B15D4680019A490 /* ViewController.m in Sources */,
 				49E96C8F1B15D4680019A490 /* AppDelegate.m in Sources */,
 				49E96C8C1B15D4680019A490 /* main.m in Sources */,
+				49A9628D1B8F167400AE42D8 /* SCI18nLanguage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

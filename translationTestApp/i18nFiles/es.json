@@ -1,5 +1,5 @@
 {
-    "language":"Spanish",
+    "name":"Spanish",
     "acronym":"es",
     "order":1,
     "content":{
@@ -9,7 +9,7 @@
         "write your name here":"Escribe tu nombre aqui",
         "yellow":"Amarillo",
         "red":"Rojo",
-        "pink":"Pink",
+        "pink":"Rosa",
         "blue":"Azul"
     }
 }

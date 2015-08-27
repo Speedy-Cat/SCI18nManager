@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SCI18nLanguage.h"
 
 /**
  SCI18Manager is a shared object that manage the internationalization of the app.
@@ -40,44 +41,15 @@
  If the i18n word does not exist will return the keyWord.
  If the language is set as nil will get the current language.
  
- @param word
+ @param key
         string to translate
  @param language
         to translate the previous string
  
  @return word translated
  */
-- (NSString *)getI18nForKey:(NSString*)word andLanguage:(NSString*)language;
+- (NSString *)getI18nForKey:(NSString*)key andLanguage:(SCI18nLanguage*)language;
 
-
-/**
- Set languages and his content to translate
- 
- Example content
- @code
- {
-    "language":"Dutch",
-     "acronym":"du",
-     "order":0, // if you want to display the languages in the list and set an order
-     "content":{
-        "hello":"Hallo",
-        "how are you?":"Hoe gaat het met je?"
-     }
- }
- 
- @param content dictionary that contain the data related with a content
- @param language string of the language
- */
-- (void)setContent:(NSDictionary *)content forLanguageName:(NSString *)language;
-
-/**
- Get the order indicated in the content of the language
- 
- @param language name string that you previously set for it
- 
- @return oder that was seted for the language
- */
-- (int)getOrderForLanguage:(NSString*)language;
 
 /**
  Get language for determinated order
@@ -86,17 +58,18 @@
  
  @return language string
  */
-- (NSString*)getLanguageForOrder:(int)order;
+- (SCI18nLanguage*)getLanguageForOrder:(int)order;
+
 
 /**
- Contain all the languages and content that you set in 'setContent:(NSDictionary *)content forLanguageName:(NSString *)language'
+ Array of SCI18nLangModel
  */
-@property (nonatomic, strong) NSMutableDictionary *languagesContent;
+@property (nonatomic, strong) NSMutableArray *languages;
 
 /**
  Language that is currently display in the app.
  */
-@property (nonatomic) NSString *currentLanguage;
+@property (nonatomic) SCI18nLanguage *currentLanguage;
 
 /**
  Translate a array of SCI18nModels for language.
@@ -106,6 +79,6 @@
  @param language name string that you previously set for it
  
  */
--(void)translateI18nElements:(NSArray*)elements forLanguage:(NSString *)language;
+-(void)translateI18nElements:(NSArray*)elements forLanguage:(SCI18nLanguage *)language;
 
 @end
