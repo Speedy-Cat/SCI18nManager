@@ -16,6 +16,7 @@
 
 @implementation SCI18nManager
 
+@synthesize currentLanguage = _currentLanguage;
 + (id)sharedInstance
 {
     static SCI18nManager *sharedInstance = nil;
@@ -56,17 +57,46 @@
     return (i18nString)? i18nString : key;
 }
 
+#pragma mark - currentLagauge setter and getter
+
 - (SCI18nLanguage *)currentLanguage
 {
     if (!_currentLanguage) {
         if ([self.languages count]) {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.order == 0" ];
-            NSArray *result = [self.languages filteredArrayUsingPredicate:predicate];
-            _currentLanguage = result[0];
+            // check user defaults
+            NSString *currentLanguageNameUserDefaults = [[NSUserDefaults standardUserDefaults]
+                                    stringForKey:kSC18nCurrentLanguageNameUserDefaults];
+            SCI18nLanguage *language = [self getLanguageForLangName:currentLanguageNameUserDefaults];
+            if (language) {
+                _currentLanguage = language;
+            }else{
+                // Default order language
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.order == 0" ];
+                NSArray *result = [self.languages filteredArrayUsingPredicate:predicate];
+                _currentLanguage = result[0];
+            }
+        }
+        else{
+            NSLog(@"SCI18nManager Alert: there are not languages seted");
         }
     }
     
     return _currentLanguage;
+}
+
+-(void)setCurrentLanguage:(SCI18nLanguage *)currentLanguage
+{
+    if (currentLanguage != _currentLanguage) {
+        //send notification
+        [[NSNotificationCenter defaultCenter] postNotificationName:kSCI18nCurrentLanguageChanged object:self];
+        
+        //and save it in the user defaults
+        NSString *currentLanguageName = currentLanguage.name;
+        [[NSUserDefaults standardUserDefaults] setObject:currentLanguageName forKey:kSC18nCurrentLanguageNameUserDefaults];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    _currentLanguage = currentLanguage;
 }
 
 - (SCI18nLanguage*)getLanguageForOrder:(int)order

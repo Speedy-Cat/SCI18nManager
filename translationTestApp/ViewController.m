@@ -32,6 +32,9 @@
     // get current language and switch
     SCI18nLanguage *currentLanguage = [[SCI18nManager sharedInstance] currentLanguage];
     [self swichtForLanguage:currentLanguage];
+    
+    // set selected segment at language control
+    [self.segmentedCtrl setSelectedSegmentIndex:currentLanguage.order];
 }
 
 - (void)setupI18manager
@@ -63,7 +66,7 @@
 - (void)swichtForLanguage:(SCI18nLanguage*)language{
 
     // change segment language
-    [self.segmentedCtrl setEnabled:YES forSegmentAtIndex:language.order];
+    //[self.segmentedCtrl setEnabled:YES forSegmentAtIndex:language.order];
     
     // change the language for text in elements
     NSArray *i18nSegmentKeyTitles = @[@"yellow",@"red",@"blue",@"pink"];
@@ -87,6 +90,7 @@
 - (IBAction)segmentCtrlAction:(id)sender {
     
     SCI18nLanguage *language = [[SCI18nManager sharedInstance] getLanguageForOrder:(int)self.segmentedCtrl.selectedSegmentIndex];
+    ((SCI18nManager*)[SCI18nManager sharedInstance]).currentLanguage = language;
     [self swichtForLanguage:language];
 }
 

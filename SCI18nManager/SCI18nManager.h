@@ -10,6 +10,16 @@
 #import "SCI18nLanguage.h"
 
 /**
+ Nofication each time currentLanguage change
+ */
+#define kSCI18nCurrentLanguageChanged @"kSCI18nCurrentLanguageChanged"
+
+/**
+ Key to save in user defaults the current language name
+ */
+#define kSC18nCurrentLanguageNameUserDefaults @"kSC18nCurrentLanguageNameUserDefaults"
+
+/**
  SCI18Manager is a shared object that manage the internationalization of the app.
  Once you set the languages contents, it takes care about:
  
